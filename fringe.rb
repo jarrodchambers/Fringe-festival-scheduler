@@ -49,12 +49,7 @@ class Show
 	end
 	
 	def is_showtime(day, hour)
-		@times.each do |time|
-			if (time.day == day && time.hour == hour)
-				return true
-			end
-		end
-		return false
+		return @times.index{|time| (time.day == day && time.hour == hour)}
 	end
 
 	def print_showtimes
